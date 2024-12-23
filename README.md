@@ -18,7 +18,7 @@ array = np.random.randint(0, 4, size=int(32e6), dtype=np.uint8)
 with open("array_python.bin", "wb") as fout:
     fout.write(array.tobytes())
 
-# This will generate a file array_python.bin (8Mb in size)
+# This will generate a file array_python.bin (32Mb in size)
 
 ```
 
