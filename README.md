@@ -43,6 +43,22 @@ gcc -shared -o dna_array.so -fPIC dna_array.c -O3 -Wall
 ### Python interface to dna_array.c
 For Python integration with the C library, refer to the included file: `dna_array.py`.
 
+### Pack reads
+```bash
+gcc dna_array_fastq.c -lz -O3 -o dna_array_fastq
 
+./dna_array_fastq
+
+Usage:   dna_array_fastq [options]
+Example: dna_array_fastq -o out.bin -k 32 -n 1000000 -i fq_list.txt
+Options:
+  -o <FILE>   output file
+  -l <FILE>   log file if `-i` is set
+  -i <FILE>   text file storing fastq files - one per line
+  -q <FILE>   fastq file, if set overwrite `-i`
+  -n <int>    number of reads (default: int(1e6))
+  -k <int>    kmer length to clip (default: 32)
+
+```
 
 
